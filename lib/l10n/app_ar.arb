@@ -1,0 +1,13 @@
+{
+  "islami" :"اسلامي",
+  "language" : "اللغه",
+  "theme" : "الوضع",
+  "settings": "الاعدادات",
+  "radio" : "راديو",
+  "sebha" : "سبحه",
+  "hadeth": "حديث",
+  "quran" : "قران",
+  "suraName": "اسم السوره",
+  "verses" : "عدد الايات",
+  "ahadeth" : "احاديث"
+}
