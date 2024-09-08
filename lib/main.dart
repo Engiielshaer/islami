@@ -9,11 +9,16 @@ import 'package:islami/ui/screens/sura_details/sura_details.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/ui/utils/app_theme.dart';
 import 'package:provider/provider.dart';
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  ThemeProvider apptheme=ThemeProvider();
+  LanguageProvider applang=LanguageProvider();
+  await apptheme.getthem();
+  await applang.getlang();
   runApp(MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_)=>LanguageProvider(),),
-        ChangeNotifierProvider(create: (_)=>ThemeProvider()),
+        ChangeNotifierProvider(create: (_)=>applang,),
+        ChangeNotifierProvider(create: (_)=>apptheme),
       ],
       child: const MyApp()));
 }

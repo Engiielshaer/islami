@@ -7,6 +7,17 @@ class ThemeProvider extends ChangeNotifier{
   ThemeMode currentThemeMode=ThemeMode.light;
   late SharedPreferences storage;
 
+  Future<void>getthem()async{
+    storage=await SharedPreferences.getInstance();
+    if(storage.getBool('isDark')??false)
+    {
+      currentThemeMode=ThemeMode.dark;
+    }
+    else{
+      currentThemeMode=ThemeMode.light;
+    }
+  }
+
   toggleTheme(bool themeSwitchValue){
     currentThemeMode=themeSwitchValue? ThemeMode.dark :ThemeMode.light;
     notifyListeners();
